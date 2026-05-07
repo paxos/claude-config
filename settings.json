@@ -1,0 +1,32 @@
+{
+  "env": {
+    "CLAUDE_ENV_FILE": "/Users/pd/.claude/env-setup.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "paxos-planning@paxos": true,
+    "paxos@paxos": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "paxos": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/pd/Developer/claude-marketplace"
+      }
+    }
+  },
+  "skipDangerousModePermissionPrompt": true
+}
