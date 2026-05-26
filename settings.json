@@ -7,6 +7,8 @@
     "codex@openai-codex": true,
     "paxos-planning@paxos": true,
     "paxos@paxos": true
+    "paxos@paxos": true,
+    "entire@entire-skills": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -25,6 +27,13 @@
       "source": {
         "source": "directory",
         "path": "/Users/pd/Developer/claude-marketplace"
+        "path": "/Users/pd/Developer/paxos/claude/claude-marketplace"
+      }
+    },
+    "entire-skills": {
+      "source": {
+        "source": "github",
+        "repo": "entireio/skills"
       }
     }
   },
