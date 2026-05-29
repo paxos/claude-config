@@ -26,6 +26,14 @@ If in doubt, ask. The cost of asking is zero. The cost of an unauthorized push i
 
 Create complete but concise PR descriptions. Describe the problem solved and how it was implemented. Don't waste reviewer time. Do NOT add self-promotion to a pull request description. I don't want to see any "Generated with Claude Code" references in my pull requests ever.
 
+## Multi-PR Project Plans
+
+For features that ship across multiple PRs, once the plan is finalized store it in `/Users/pd/Developer/plans` (a standalone local git repo) as a markdown **todo list**. Keep it updated throughout the project — flip items as they progress and append a changelog — and commit each update.
+
+Structure each plan as a checklist grouped by PR: a **status table** at the top (one row per work item, marked ☐ not started / ◐ in progress / ☑ done), a short **Context** section (why the change exists), a **per-PR breakdown** that names the specific files to touch and existing patterns to reuse, a **verification** section (how to test it end-to-end), and a **changelog** at the bottom. Order the PRs so each is independently reviewable and safe to merge — stack them when a later PR depends on an earlier one. As work proceeds, flip the status markers and append changelog entries (then commit, per below).
+
+This is the one carve-out from the Git HARD RULES above: committing to `/Users/pd/Developer/plans` is pre-authorized and does NOT need per-commit approval. The carve-out is scoped to that repo only — every other repo still requires explicit per-commit/per-push approval.
+
 ## Git Workflow
 
 When reverting changes, use surgical git operations (e.g., `git checkout main -- <file>` or `git revert`) — NEVER hard-reset entire branches.
