@@ -24,7 +24,7 @@ If in doubt, ask. The cost of asking is zero. The cost of an unauthorized push i
 
 ## Pull Requests
 
-Create complete but concise PR descriptions. Describe the problem solved and how it was implemented. Don't waste reviewer time. Do NOT add self-promotion to a pull request description. I don't want to see any "Generated with Claude Code" references in my pull requests ever.
+Always start the PR description with a short **TL;DR** (1–2 sentences) at the top. Keep the rest short — describe the problem solved and how it was implemented, briefly. Don't waste reviewer time. Do NOT add self-promotion to a pull request description. I don't want to see any "Generated with Claude Code" references in my pull requests ever.
 
 ## Git Workflow
 
