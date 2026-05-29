@@ -1,3 +1,7 @@
+## Filesystem Search — HARD RULE
+
+**NEVER search at the root of my machine (`/`, `/System`, etc.).** Everything ever related to my work lives under `~/Developer`. Scope all searches there. If you ever think you need to look somewhere else, ask me first.
+
 ## Git Operations — HARD RULES (NO EXCEPTIONS)
 
 Every `git commit`, `git push`, `gh pr create`, and any command that writes to the remote is BLOCKED until I explicitly say to do it in that moment. "Open a PR" is approval for that PR only — not for future commits or pushes in the same conversation. Each destructive or remote-writing git operation requires its own explicit approval. Do not infer ongoing permission from a previous approval.
