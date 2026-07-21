@@ -3,40 +3,6 @@
     "CLAUDE_ENV_FILE": "/Users/pd/.claude/env-setup.sh",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
-    "codex@openai-codex": true,
-    "paxos-planning@paxos": true,
-    "paxos@paxos": true,
-    "entire@entire-skills": true
-  },
-  "extraKnownMarketplaces": {
-    "claude-plugins-official": {
-      "source": {
-        "source": "github",
-        "repo": "anthropics/claude-plugins-official"
-      }
-    },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      }
-    },
-    "paxos": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/pd/Developer/paxos/claude/claude-marketplace"
-      }
-    },
-    "entire-skills": {
-      "source": {
-        "source": "github",
-        "repo": "entireio/skills"
-      }
-    }
-  },
-  "skipDangerousModePermissionPrompt": true,
   "hooks": {
     "SessionStart": [
       {
@@ -110,6 +76,60 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd=$(jq -r '.tool_input.command // \"\"'); case \"$cmd\" in *\"git push\"*|*\"gh pr create\"*) root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0; bin=\"$root/node_modules/.bin/oxfmt\"; [ -x \"$bin\" ] || exit 0; out=$(cd \"$root\" && \"$bin\" --check 2>&1) && exit 0; reason=$(printf 'oxfmt formatting is NOT clean — push/PR blocked. Fix: (cd %s && ./node_modules/.bin/oxfmt) or pnpm run format, then stage + commit the fix and retry.\\n\\n%s' \"$root\" \"$out\"); jq -cn --arg r \"$reason\" '{hookSpecificOutput:{hookEventName:\"PreToolUse\",permissionDecision:\"deny\",permissionDecisionReason:$r}}';; esac; exit 0",
+            "timeout": 30,
+            "statusMessage": "Checking oxfmt formatting before push…"
+          }
+        ]
+      }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "paxos-planning@paxos": true,
+    "paxos@paxos": true,
+    "entire@entire-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "paxos": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/pd/Developer/paxos/claude/claude-marketplace"
+      }
+    },
+    "entire-skills": {
+      "source": {
+        "source": "github",
+        "repo": "entireio/skills"
+      }
+    }
+  },
+  "tui": "fullscreen",
+  "voice": {
+    "enabled": false,
+    "mode": "hold"
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "teammateMode": "auto",
+  "voiceEnabled": false
 }
