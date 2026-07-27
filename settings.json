@@ -3,6 +3,10 @@
     "CLAUDE_ENV_FILE": "/Users/pd/.claude/env-setup.sh",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
   "hooks": {
     "SessionStart": [
       {
@@ -92,9 +96,9 @@
     ]
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": false,
     "codex@openai-codex": true,
-    "paxos-planning@paxos": true,
+    "paxos-planning@paxos": false,
     "paxos@paxos": true,
     "entire@entire-skills": true
   },
@@ -131,6 +135,5 @@
   },
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "auto",
-  "voiceEnabled": false,
-  "model": "opus[1m]"
+  "voiceEnabled": false
 }
