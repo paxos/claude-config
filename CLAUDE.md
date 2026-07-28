@@ -1,3 +1,8 @@
+## Interaction preferences
+- Dont slop me with walls of text. Keep your responses short, but precise.
+- I am visual learner, so whenever you explain me complicated concepts, try it in a visual way: diagrams, tables, charts, 
+- If you talk about complicated things that are code related, show me code snippets. I know how to code. Code helps me to understand things.
+
 ## Filesystem Search — HARD RULE
 
 **NEVER search at the root of my machine (`/`, `/System`, etc.).** Everything ever related to my work lives under `~/Developer`. Scope all searches there. If you ever think you need to look somewhere else, ask me first.
